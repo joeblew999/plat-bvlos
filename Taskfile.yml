@@ -1,0 +1,59 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  PLAT_TELEMETRY_DIR: '{{.ROOT_DIR}}/../plat-telemetry'
+  BVLOS_DOCS_DIR: '{{.ROOT_DIR}}/docs'
+
+env:
+  # Overrides for plat-telemetry services
+  DOCS_SRC: '{{.BVLOS_DOCS_DIR}}'
+  DOCS_DIST: '{{.BVLOS_DOCS_DIR}}/.dist'
+  DOCS_HEALTH_PATH: /plat-bvlos/
+  PC_SOCKET: '{{.ROOT_DIR}}/.pc.sock'
+
+includes:
+  # Process Compose tasks - dir points to plat-telemetry so all subsystem tasks exist
+  pc:
+    taskfile: ../plat-telemetry/pc/Taskfile.yml
+    dir: ../plat-telemetry
+    optional: true
+
+  # Hugo docs - binary from plat-telemetry, content from bvlos (via env vars above)
+  docs:
+    taskfile: ../plat-telemetry/docs/Taskfile.yml
+      
+
+tasks:
+  default:
+    desc: Show available tasks
+    cmds:
+      - task --list-all
+
+  start:
+    desc: Start all services
+    dir: '{{.PLAT_TELEMETRY_DIR}}'
+    cmds:
+      - task pc:run
+
+  start:fg:
+    desc: Start all services in foreground
+    dir: '{{.PLAT_TELEMETRY_DIR}}'
+    cmds:
+      - task pc:run:fg
+
+  stop:
+    desc: Stop all services
+    cmds:
+      - task pc:stop
+
+  status:
+    desc: Show status of all services
+    cmds:
+      - task pc:status
+
+  attach:
+    desc: Attach to running services
+    cmds:
+      - task pc:attach

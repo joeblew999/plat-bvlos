@@ -1,0 +1,22 @@
+# Task
+.task/
+
+# Hugo
+docs/.dist/
+docs/.data/
+docs/.hugo_build.lock
+
+# Process Compose
+.pc.sock
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env.local

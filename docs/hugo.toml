@@ -1,0 +1,6 @@
+baseURL = 'http://localhost:1314/plat-bvlos/'
+languageCode = 'en-us'
+title = 'Plat BVLOS'
+
+[params]
+  description = 'Beyond Visual Line of Sight Platform Documentation'
