@@ -3,7 +3,7 @@ apiVersion: xplat/v1
 kind: Package
 
 name: bvlos
-version: latest
+version: main
 description: BVLOS drone operations - docs and protomap tools
 author: Gerard Webb
 license: MIT
