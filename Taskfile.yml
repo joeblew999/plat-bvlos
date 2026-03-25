@@ -23,7 +23,11 @@ includes:
   # Hugo docs - binary from plat-telemetry, content from bvlos (via env vars above)
   docs:
     taskfile: ../plat-telemetry/docs/Taskfile.yml
-      
+  
+  # OUTSIDE PC config for now.
+  protomap:
+    taskfile: ./protomap/Taskfile.yml
+    
 
 tasks:
   default:

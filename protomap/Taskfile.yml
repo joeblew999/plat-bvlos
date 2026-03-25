@@ -1,0 +1,142 @@
+version: '3'
+
+vars:
+  PROTOMAP_UPSTREAM_REPO: https://github.com/protomaps/go-pmtiles.git
+  PROTOMAP_VERSION: '{{.PROTOMAP_VERSION | default "1.29.1"}}'
+  PROTOMAP_SRC: '{{.TASKFILE_DIR}}/.src'
+  PROTOMAP_BIN: '{{.TASKFILE_DIR}}/.bin'
+  PROTOMAP_BIN_NAME: 'pmtiles'
+  PROTOMAP_DATA: '{{.TASKFILE_DIR}}/.data'
+
+env:
+  GOWORK: off
+
+tasks:
+  debug:
+    desc: Debug helper
+    cmds:
+      - echo {{.TASKFILE_DIR}}
+      
+  # src: tasks
+  src:clone:
+    desc: Clone the upstream repository at pinned version
+    cmds:
+      - git clone --branch {{.PROTOMAP_VERSION}} --depth 1 {{.PROTOMAP_UPSTREAM_REPO}} {{.PROTOMAP_SRC}}
+    status:
+      - test -d {{.PROTOMAP_SRC}}
+
+  src:update:
+    desc: Fetch and checkout pinned version
+    deps: [src:clone]
+    dir: '{{.PROTOMAP_SRC}}'
+    cmds:
+      - git fetch --tags
+      - git checkout {{.PROTOMAP_VERSION}}
+
+  # bin: tasks
+  bin:build:
+    desc: Build {{.PROTOMAP_BIN_NAME}} binary
+    deps: [src:clone]
+    dir: '{{.PROTOMAP_SRC}}'
+    status:
+      - test -f {{.PROTOMAP_BIN}}/{{.PROTOMAP_BIN_NAME}}
+    cmds:
+      - mkdir -p {{.PROTOMAP_BIN}}
+      - go build -o {{.PROTOMAP_BIN}}/{{.PROTOMAP_BIN_NAME}} .
+      - |
+        {
+          echo "commit: $(git -C {{.PROTOMAP_SRC}} rev-parse --short HEAD 2>/dev/null || echo 'unknown')"
+          echo "timestamp: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "checksum: $(shasum -a 256 {{.PROTOMAP_BIN}}/{{.PROTOMAP_BIN_NAME}} | awk '{print $1}')"
+        } > {{.PROTOMAP_BIN}}/.version
+
+  bin:download:
+    desc: Download pre-built binary from release
+    vars:
+      GOOS:
+        sh: go env GOOS
+      GOARCH:
+        sh: go env GOARCH
+    cmds:
+      - mkdir -p {{.PROTOMAP_BIN}}
+      - curl -L https://github.com/{{.RELEASE_REPO}}/releases/download/{{.RELEASE_VERSION}}/{{.PROTOMAP_BIN_NAME}}-{{.GOOS}}-{{.GOARCH}}.tar.gz | tar xz -C {{.PROTOMAP_BIN}}
+      - echo "{{.RELEASE_VERSION}}" > {{.PROTOMAP_BIN}}/.version
+    status:
+      - test -f {{.PROTOMAP_BIN}}/{{.PROTOMAP_BIN_NAME}}
+
+  # dev: tasks
+  dev:run:
+    desc: Run from source (development mode)
+    deps: [src:clone]
+    dir: '{{.PROTOMAP_SRC}}'
+    cmds:
+      - mkdir -p {{.PROTOMAP_DATA}}
+      - go run ./{{.PROTOMAP_BIN_NAME}} {{.CLI_ARGS}}
+
+  # Service tasks
+  deps:
+    desc: Download dependencies
+    deps: [src:clone]
+    dir: '{{.PROTOMAP_SRC}}'
+    cmds:
+      - go mod download
+    status:
+      - test -d {{.PROTOMAP_SRC}}/vendor || go list -m all >/dev/null 2>&1
+
+  ensure:
+    desc: Ensure binary exists (build or download)
+    status:
+      - test -f {{.PROTOMAP_BIN}}/{{.PROTOMAP_BIN_NAME}}
+    cmds:
+      - task: bin:download
+
+  install:
+    desc: Install {{.PROTOMAP_BIN_NAME}} binary
+    deps: [src:clone]
+    dir: '{{.PROTOMAP_SRC}}'
+    cmds:
+      - go install ./cmd/{{.PROTOMAP_BIN_NAME}}
+
+  test:
+    desc: Run tests
+    deps: [src:clone]
+    dir: '{{.PROTOMAP_SRC}}'
+    cmds:
+      - go test -v ./...
+
+  package:
+    desc: Package binary for release
+    vars:
+      GOOS: '{{.GOOS | default OS}}'
+      GOARCH: '{{.GOARCH | default ARCH}}'
+      DIST: '{{.DIST | default .DIST_DIR}}'
+      BINARY_NAME: '{{.PROTOMAP_BIN_NAME}}'
+    cmds:
+      - tar -czvf {{.DIST}}/{{.BINARY_NAME}}-{{.GOOS}}-{{.GOARCH}}.tar.gz -C {{.PROTOMAP_BIN}} {{.BINARY_NAME}}
+
+  # clean: tasks
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - rm -rf {{.PROTOMAP_BIN}}
+    status:
+      - '! test -d {{.PROTOMAP_BIN}}'
+
+  clean:all:
+    desc: Clean everything (.src, .bin, .data)
+    cmds:
+      - rm -rf {{.PROTOMAP_SRC}} {{.PROTOMAP_BIN}} {{.PROTOMAP_DATA}}
+
+  clean:data:
+    desc: Clean data directory
+    cmds:
+      - rm -rf {{.PROTOMAP_DATA}}
+    status:
+      - '! test -d {{.PROTOMAP_DATA}}'
+
+  clean:src:
+    desc: Clean source directory
+    cmds:
+      - rm -rf {{.PROTOMAP_SRC}}
+    status:
+      - '! test -d {{.PROTOMAP_SRC}}'

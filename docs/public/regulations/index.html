@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/plat-bvlos/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=plat-bvlos/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BVLOS Regulations | Plat BVLOS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li><strong><a href="http://localhost:1313/plat-bvlos/">Plat BVLOS</a></strong></li>
+      </ul>
+      <ul>
+        <li><a href="http://localhost:1313/plat-bvlos/">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    
+<article>
+  <hgroup>
+    <h1>BVLOS Regulations</h1>
+  </hgroup>
+  <h2 id="why-bvlos-matters-for-fleet-operations">Why BVLOS Matters for Fleet Operations</h2>
+<p>Beyond Visual Line of Sight (BVLOS) regulations fundamentally determine what commercial drone fleets can accomplish. Understanding the regulatory landscape is essential for fleet platform design and market strategy.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Challenge</th>
+          <th>Impact on Fleet Platform</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Operational Limits</strong></td>
+          <td>VLOS restrictions (400-500m range) limit fleet utility. BVLOS enables infrastructure inspection, delivery, and agriculture at scale.</td>
+      </tr>
+      <tr>
+          <td><strong>Compliance Integration</strong></td>
+          <td>Fleet software must enforce regulatory boundaries—Remote ID, detect-and-avoid, and operational authorization requirements inform telemetry and safety features.</td>
+      </tr>
+      <tr>
+          <td><strong>Market Timing</strong></td>
+          <td>Countries are at different stages of BVLOS enablement. Understanding where regulations are opening helps prioritize target markets.</td>
+      </tr>
+      <tr>
+          <td><strong>Partner Readiness</strong></td>
+          <td>Fleet operators need BVLOS approvals for real missions. Tracking who has approvals identifies potential customers and partners.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="global-trends">Global Trends</h2>
+<p>Across all major aviation authorities, four trends are emerging:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Trend</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>SORA Adoption</strong></td>
+          <td>FAA, EASA, CASA, and Transport Canada using Specific Operations Risk Assessment methodology <a href="#ref-1">[1]</a></td>
+      </tr>
+      <tr>
+          <td><strong>Remote ID Mandates</strong></td>
+          <td>Becoming mandatory across all jurisdictions</td>
+      </tr>
+      <tr>
+          <td><strong>Waiver → Rules</strong></td>
+          <td>Transitioning from case-by-case waivers to standardized performance-based rules</td>
+      </tr>
+      <tr>
+          <td><strong>UTM Integration</strong></td>
+          <td>Countries developing UAS Traffic Management for scalable BVLOS</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="americas">Americas</h2>
+<h3 id="united-states-faa">United States (FAA)</h3>
+<p><strong>Status:</strong> Waiver-based, moving to rule-based (Part 108) <a href="#ref-2">[2]</a></p>
+<p><strong>Timeline</strong> <a href="#ref-3">[3]</a>:</p>
+<ul>
+<li>190 BVLOS waivers issued as of Oct 2024 (up from 6 in 2020)</li>
+<li>Part 108 proposed rule expected Jan 2026</li>
+<li>FAA Reauthorization Act 2024 extended BEYOND program to 2029 <a href="#ref-4">[4]</a></li>
+</ul>
+<p><strong>Operators with BVLOS Approvals:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Use Case</th>
+          <th>Approval Date</th>
+          <th>Ref</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DroneUp</td>
+          <td>Medical deliveries</td>
+          <td>Jan 2024</td>
+          <td><a href="#ref-5">[5]</a></td>
+      </tr>
+      <tr>
+          <td>Amazon Prime Air</td>
+          <td>Consumer delivery</td>
+          <td>May 2024</td>
+          <td><a href="#ref-6">[6]</a></td>
+      </tr>
+      <tr>
+          <td>Asylon</td>
+          <td>Security/surveillance</td>
+          <td>Apr 2024</td>
+          <td><a href="#ref-7">[7]</a></td>
+      </tr>
+      <tr>
+          <td>Multiple (DFW area)</td>
+          <td>First multi-operator airspace</td>
+          <td>Jul 2024</td>
+          <td><a href="#ref-8">[8]</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="canada-transport-canada">Canada (Transport Canada)</h3>
+<p><strong>Status:</strong> SFOC required, moving to routine BVLOS <a href="#ref-9">[9]</a></p>
+<p><strong>Framework:</strong></p>
+<ul>
+<li>Apr 2025: Routine BVLOS permitted without SFOC in low-risk conditions (≤150kg, uncontrolled airspace, sparse population)</li>
+<li>Requires Advanced Pilot Certificate</li>
+<li>National UTM framework via Nav Canada by 2030</li>
+</ul>
+<p><strong>Operators:</strong> TBD</p>
+<hr>
+<h2 id="europe">Europe</h2>
+<h3 id="european-union-easa">European Union (EASA)</h3>
+<p><strong>Status:</strong> Specific category with SORA/PDRA pathways <a href="#ref-10">[10]</a></p>
+<p><strong>Framework</strong> <a href="#ref-1">[1]</a>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Standard Scenario</td>
+          <td>STS-02: BVLOS with airspace observers</td>
+      </tr>
+      <tr>
+          <td>Remote ID</td>
+          <td>Mandatory since Jan 2024 <a href="#ref-11">[11]</a></td>
+      </tr>
+      <tr>
+          <td>Approval Timeline</td>
+          <td>4-9 months (medical), 6-12 months (consumer) <a href="#ref-12">[12]</a></td>
+      </tr>
+      <tr>
+          <td>Fees</td>
+          <td>€2,000-€15,000</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Operators:</strong> Various operators via national sandboxes and fast-track member state programs.</p>
+<hr>
+<h3 id="united-kingdom-caa">United Kingdom (CAA)</h3>
+<p><strong>Status:</strong> Operational Authorization (OA) via UK SORA</p>
+<p><strong>Framework:</strong></p>
+<ul>
+<li>BVLOS requires CAA Operational Authorization</li>
+<li>UK SORA process (since Apr 2025)</li>
+<li>Detect-and-avoid technology typically required (ADS-B, FLARM, ground radar)</li>
+</ul>
+<p><strong>Operators:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Achievement</th>
+          <th>Ref</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>sees.ai</td>
+          <td>First UK routine BVLOS (2021), National Grid inspections (2023)</td>
+          <td><a href="#ref-13">[13]</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="ireland-iaa">Ireland (IAA)</h3>
+<p><strong>Status:</strong> PDRA G-03 pathway</p>
+<p><strong>Framework:</strong> Opens door to streamlined EU authorizations via EASA.</p>
+<p><strong>Operators:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Achievement</th>
+          <th>Ref</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>sees.ai</td>
+          <td>First BVLOS permission in Ireland (2025)</td>
+          <td><a href="#ref-13">[13]</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="asia-pacific">Asia-Pacific</h2>
+<h3 id="australia-casa">Australia (CASA)</h3>
+<p><strong>Status:</strong> SORA-based assessment under Part 101 <a href="#ref-14">[14]</a></p>
+<p><strong>Framework</strong> <a href="#ref-15">[15]</a>:</p>
+<ul>
+<li>Adopting SORA 2.5 with quantitative risk modeling</li>
+<li>Broad Area BVLOS Self-Assessment framework available</li>
+<li>Streamlined process attracting global companies <a href="#ref-16">[16]</a></li>
+</ul>
+<p><strong>Operators:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Achievement</th>
+          <th>Ref</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sphere Drones</td>
+          <td>Broad Area BVLOS approval (May 2024)</td>
+          <td><a href="#ref-17">[17]</a></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="japan-mlitjcab">Japan (MLIT/JCAB)</h3>
+<p><strong>Status:</strong> Level 4 BVLOS over populated areas permitted <a href="#ref-18">[18]</a></p>
+<p><strong>Framework</strong> <a href="#ref-19">[19]</a>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Level</th>
+          <th>Description</th>
+          <th>License Required</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Level 1-2</td>
+          <td>VLOS operations</td>
+          <td>Second Class</td>
+      </tr>
+      <tr>
+          <td>Level 3</td>
+          <td>BVLOS over uninhabited areas</td>
+          <td>Second Class</td>
+      </tr>
+      <tr>
+          <td>Level 4</td>
+          <td>BVLOS over urban/populated areas</td>
+          <td>First Class</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>Licenses valid 3 years, require registered drone school + flight test</li>
+<li>422,879 UAVs registered as of Oct 2024</li>
+</ul>
+<p><strong>Operators:</strong></p>
+<ul>
+<li>Only 1 UAV type has obtained First Class (Level 4) certification as of Oct 2024</li>
+<li>5 UAV types have Second Class certification</li>
+</ul>
+<hr>
+<h3 id="singapore-caas">Singapore (CAAS)</h3>
+<p><strong>Status:</strong> BVLOS prohibited without Operator + Class 1 Activity Permit <a href="#ref-20">[20]</a></p>
+<p><strong>Framework</strong> <a href="#ref-21">[21]</a>:</p>
+<ul>
+<li>Strict authorization required for any BVLOS</li>
+<li>Drones &gt;25kg or BVLOS require full Operator Permit + Class 1 permit</li>
+<li>B-RID (Broadcast Remote ID) mandatory from Dec 2025 for drones &gt;250g</li>
+<li>B-RID enables foundation for future scaled BVLOS/automated ops</li>
+<li>Regulatory sandbox programs available for fast-track approvals</li>
+</ul>
+<p><strong>Operators:</strong> TBD (sandbox trials ongoing)</p>
+<hr>
+<h3 id="china-caac">China (CAAC)</h3>
+<p><strong>Status:</strong> Special authorization required for BVLOS <a href="#ref-22">[22]</a></p>
+<p><strong>Framework</strong> <a href="#ref-23">[23]</a>:</p>
+<ul>
+<li>Interim Regulations on Management of Unmanned Aircraft Flights (Jan 2024)</li>
+<li>BVLOS requires Advanced Operations Certificate + Special Flight Operations Certificate (SFOC)</li>
+<li>120m altitude limit nationwide; above requires authorization</li>
+<li>Simplified digital application processes enabling more BVLOS flights <a href="#ref-16">[16]</a></li>
+</ul>
+<p><strong>Operators:</strong> TBD (domestic operators under CAAC framework)</p>
+<hr>
+<h3 id="india-dgca">India (DGCA)</h3>
+<p><strong>Status:</strong> No formal BVLOS framework yet; trial phase only <a href="#ref-24">[24]</a></p>
+<p><strong>Framework</strong> <a href="#ref-25">[25]</a>:</p>
+<ul>
+<li>Operating under Drone Rules, 2021 with project-based exemptions</li>
+<li>Apr 2025: Separate BVLOS pilot license category introduced for urban/semi-urban</li>
+<li>DGCA &ldquo;in advance stage of finalising BVLOS rules&rdquo; <a href="#ref-26">[26]</a></li>
+<li>Experimental corridors active (e.g., &ldquo;Medicine from the Sky&rdquo; in Telangana)</li>
+</ul>
+<p><strong>Operators:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operator</th>
+          <th>Achievement</th>
+          <th>Ref</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Skye Air Mobility</td>
+          <td>World&rsquo;s longest BVLOS medicine delivery (104km, Baruipur-Medinipur)</td>
+          <td><a href="#ref-27">[27]</a></td>
+      </tr>
+      <tr>
+          <td>Flipkart Health</td>
+          <td>Partner on 104km delivery trial</td>
+          <td>—</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="compliance-requirements">Compliance Requirements</h2>
+<p>Across all jurisdictions, BVLOS regulations converge on common technical requirements. This section distills what our fleet platform must implement.</p>
+<h3 id="1-remote-id-mandatory-everywhere">1. Remote ID (Mandatory Everywhere)</h3>
+<p>All major regulators require drones to broadcast identification and location data.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Jurisdiction</th>
+          <th>Requirement</th>
+          <th>Deadline</th>
+          <th>Ref</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>USA (FAA)</td>
+          <td>Standard Remote ID or broadcast module</td>
+          <td>Sep 2023 (in effect)</td>
+          <td><a href="#ref-2">[2]</a></td>
+      </tr>
+      <tr>
+          <td>EU (EASA)</td>
+          <td>Remote ID for Specific category + Class 1+</td>
+          <td>Jan 2024 (in effect)</td>
+          <td><a href="#ref-11">[11]</a></td>
+      </tr>
+      <tr>
+          <td>Singapore</td>
+          <td>B-RID for drones &gt;250g</td>
+          <td>Dec 2025</td>
+          <td><a href="#ref-21">[21]</a></td>
+      </tr>
+      <tr>
+          <td>Australia</td>
+          <td>Remote ID under consideration</td>
+          <td>TBD</td>
+          <td><a href="#ref-14">[14]</a></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Broadcast module hardware integration (OpenDroneID compatible)</li>
+<li>Network Remote ID capability via NATS for fleet-wide tracking</li>
+<li>Logging of all Remote ID transmissions to JetStream for audit</li>
+</ul>
+<hr>
+<h3 id="2-detect-and-avoid-daa">2. Detect-and-Avoid (DAA)</h3>
+<p>BVLOS operations require ability to detect and avoid other aircraft and obstacles.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Jurisdiction</th>
+          <th>Requirement</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>USA (FAA)</td>
+          <td>&ldquo;Well clear&rdquo; standard; DAA system required for Part 108</td>
+          <td>Performance-based, not prescriptive</td>
+      </tr>
+      <tr>
+          <td>UK (CAA)</td>
+          <td>DAA technology typically required (ADS-B, FLARM, ground radar)</td>
+          <td>Case-by-case in OA process</td>
+      </tr>
+      <tr>
+          <td>Japan</td>
+          <td>Required for Level 4 urban operations</td>
+          <td><a href="#ref-18">[18]</a></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>ADS-B In receiver integration (traffic awareness)</li>
+<li>Sensor fusion on Jetson (camera, radar, lidar options)</li>
+<li>Autonomous avoidance maneuvers or operator alerting</li>
+<li>Logging of all DAA events to JetStream</li>
+</ul>
+<hr>
+<h3 id="3-geofencing">3. Geofencing</h3>
+<p>Hardware-enforced boundaries preventing flight into restricted areas.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Jurisdiction</th>
+          <th>Requirement</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>USA (FAA)</td>
+          <td>Geofence part of operational approval</td>
+          <td>Defined in waiver/Part 108</td>
+      </tr>
+      <tr>
+          <td>EU (EASA)</td>
+          <td>Geo-awareness required in Specific category</td>
+          <td>Per SORA ground risk assessment</td>
+      </tr>
+      <tr>
+          <td>All</td>
+          <td>Altitude limits (typically 120m/400ft AGL)</td>
+          <td>Fundamental to all frameworks</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Geofence enforcement on flight controller (PX4 <code>GF_*</code> parameters)</li>
+<li>Dynamic geofence updates via Gateway (temporary restrictions)</li>
+<li>Altitude ceiling enforcement</li>
+<li>Breach logging and alerting to fleet</li>
+</ul>
+<hr>
+<h3 id="4-command--control-c2-link">4. Command &amp; Control (C2) Link</h3>
+<p>Reliable, redundant communication between operator and aircraft.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Jurisdiction</th>
+          <th>Requirement</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>USA (FAA)</td>
+          <td>C2 link performance standards in Part 108</td>
+          <td>Latency, availability, security</td>
+      </tr>
+      <tr>
+          <td>EU (EASA)</td>
+          <td>C2 link reliability per SORA</td>
+          <td>Risk-dependent requirements</td>
+      </tr>
+      <tr>
+          <td>All</td>
+          <td>Failsafe behavior on C2 loss</td>
+          <td>Return-to-home, land, or loiter</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Primary C2 via LTE/5G or dedicated radio</li>
+<li>Backup C2 path (e.g., satellite for long-range)</li>
+<li>Automatic failsafe on link loss (RTL configured in PX4)</li>
+<li>C2 link status telemetry to fleet</li>
+<li>Link quality logging for audit</li>
+</ul>
+<hr>
+<h3 id="5-operational-authorization-documentation">5. Operational Authorization Documentation</h3>
+<p>Regulators require documented risk assessment and operational procedures.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Framework</th>
+          <th>Used By</th>
+          <th>Key Documents</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SORA</td>
+          <td>EASA, UK CAA, CASA, Transport Canada</td>
+          <td>ConOps, Ground Risk, Air Risk, OSO mitigations</td>
+      </tr>
+      <tr>
+          <td>Part 107 Waiver</td>
+          <td>FAA (current)</td>
+          <td>Safety case, operational limits</td>
+      </tr>
+      <tr>
+          <td>Part 108</td>
+          <td>FAA (coming)</td>
+          <td>Performance-based compliance</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Export flight logs in regulator-accepted formats</li>
+<li>Generate ConOps-supporting data (flight areas, times, frequencies)</li>
+<li>Maintain operator/pilot certification records</li>
+<li>Track aircraft maintenance and inspection status</li>
+</ul>
+<hr>
+<h3 id="6-pilotoperator-licensing">6. Pilot/Operator Licensing</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Jurisdiction</th>
+          <th>BVLOS License</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>USA</td>
+          <td>Part 107 + waiver (current), Part 108 (future)</td>
+          <td><a href="#ref-2">[2]</a></td>
+      </tr>
+      <tr>
+          <td>EU</td>
+          <td>A2/STS certificate or Specific authorization</td>
+          <td><a href="#ref-1">[1]</a></td>
+      </tr>
+      <tr>
+          <td>UK</td>
+          <td>GVC + Operational Authorization</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Japan</td>
+          <td>First Class (Level 4), Second Class (Level 3)</td>
+          <td><a href="#ref-19">[19]</a></td>
+      </tr>
+      <tr>
+          <td>Canada</td>
+          <td>Advanced Pilot Certificate + SFOC</td>
+          <td><a href="#ref-9">[9]</a></td>
+      </tr>
+      <tr>
+          <td>India</td>
+          <td>BVLOS pilot license (Apr 2025+)</td>
+          <td><a href="#ref-25">[25]</a></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Pilot authentication before flight authorization</li>
+<li>License/certification verification and expiry tracking</li>
+<li>Per-pilot flight hour logging</li>
+<li>Role-based access (pilot vs. observer vs. fleet manager)</li>
+</ul>
+<hr>
+<h3 id="7-flight-logging--audit-trail">7. Flight Logging &amp; Audit Trail</h3>
+<p>All jurisdictions require comprehensive flight records.</p>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Complete telemetry recording (position, attitude, battery, sensors)</li>
+<li>Timestamped event logging (arm, takeoff, waypoints, land, disarm)</li>
+<li>Immutable storage (JetStream with retention policy)</li>
+<li>Export capability for regulatory submission</li>
+<li>Incident flagging and investigation support</li>
+</ul>
+<hr>
+<h3 id="8-insurance--liability">8. Insurance &amp; Liability</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Jurisdiction</th>
+          <th>Requirement</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>EU</td>
+          <td>Third-party liability insurance mandatory</td>
+      </tr>
+      <tr>
+          <td>USA</td>
+          <td>Insurance typically required by waiver conditions</td>
+      </tr>
+      <tr>
+          <td>All</td>
+          <td>Proof of insurance often required for authorization</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Platform Requirements:</strong></p>
+<ul>
+<li>Insurance policy tracking per aircraft</li>
+<li>Coverage verification before flight authorization</li>
+<li>Incident documentation for claims</li>
+</ul>
+<hr>
+<h2 id="external-integrations">External Integrations</h2>
+<p>BVLOS compliance requires real-time data exchange with external systems. These are the integrations our platform needs to support.</p>
+<h3 id="airspace--traffic">Airspace &amp; Traffic</h3>
+<table>
+  <thead>
+      <tr>
+          <th>System</th>
+          <th>Purpose</th>
+          <th>Data Flow</th>
+          <th>Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>ADS-B In</strong></td>
+          <td>Traffic awareness from manned aircraft</td>
+          <td>Receive → DAA system</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td><strong>FLARM</strong></td>
+          <td>Traffic awareness from gliders/GA</td>
+          <td>Receive → DAA system</td>
+          <td>Medium</td>
+      </tr>
+      <tr>
+          <td><strong>UTM/USS</strong></td>
+          <td>UAS traffic management, flight authorization</td>
+          <td>Bidirectional</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td><strong>LAANC</strong> (USA)</td>
+          <td>Automated airspace authorization</td>
+          <td>Request/Response</td>
+          <td>High (USA)</td>
+      </tr>
+      <tr>
+          <td><strong>AIM/NOTAM</strong></td>
+          <td>Temporary flight restrictions, airspace changes</td>
+          <td>Receive → Geofence</td>
+          <td>High</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>UTM Service Suppliers (USS):</strong></p>
+<ul>
+<li>USA: Airspace Link, Aloft, DroneUp, FlyFreely (see <a href="https://www.faa.gov/uas/getting_started/laanc">FAA LAANC list</a>)</li>
+<li>EU: Various per member state</li>
+<li>Australia: Wing, Airservices Australia</li>
+</ul>
+<p><em>Note: AirMap shut down LAANC service in June 2023.</em></p>
+<hr>
+<h3 id="remote-id-networks">Remote ID Networks</h3>
+<table>
+  <thead>
+      <tr>
+          <th>System</th>
+          <th>Purpose</th>
+          <th>Protocol</th>
+          <th>Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>OpenDroneID</strong></td>
+          <td>Broadcast Remote ID standard</td>
+          <td>Bluetooth 4/5, WiFi Beacon</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td><strong>Network Remote ID</strong></td>
+          <td>Fleet-wide ID via internet</td>
+          <td>USS APIs</td>
+          <td>Required (USA)</td>
+      </tr>
+      <tr>
+          <td><strong>FAA Remote ID</strong></td>
+          <td>US Remote ID compliance</td>
+          <td>USS integration</td>
+          <td>Required (USA)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="regulatory-databases">Regulatory Databases</h3>
+<table>
+  <thead>
+      <tr>
+          <th>System</th>
+          <th>Purpose</th>
+          <th>Data Flow</th>
+          <th>Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Pilot License DB</strong></td>
+          <td>Verify pilot certifications</td>
+          <td>Query → Authorization</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td><strong>Aircraft Registry</strong></td>
+          <td>Verify registration status</td>
+          <td>Query → Pre-flight</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td><strong>Insurance Verification</strong></td>
+          <td>Confirm coverage validity</td>
+          <td>Query → Pre-flight</td>
+          <td>Medium</td>
+      </tr>
+      <tr>
+          <td><strong>Maintenance Records</strong></td>
+          <td>Track airworthiness</td>
+          <td>Bidirectional</td>
+          <td>Medium</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="weather--environment">Weather &amp; Environment</h3>
+<table>
+  <thead>
+      <tr>
+          <th>System</th>
+          <th>Purpose</th>
+          <th>Data Flow</th>
+          <th>Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Aviation Weather (METAR/TAF)</strong></td>
+          <td>Wind, visibility, ceiling</td>
+          <td>Receive → Flight planning</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td><strong>Radar/Precipitation</strong></td>
+          <td>Real-time weather hazards</td>
+          <td>Receive → In-flight alerts</td>
+          <td>Medium</td>
+      </tr>
+      <tr>
+          <td><strong>Solar/Geomagnetic</strong></td>
+          <td>GPS reliability forecasts</td>
+          <td>Receive → Flight planning</td>
+          <td>Low</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="emergency-services">Emergency Services</h3>
+<table>
+  <thead>
+      <tr>
+          <th>System</th>
+          <th>Purpose</th>
+          <th>Data Flow</th>
+          <th>Priority</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>ATC (if required)</strong></td>
+          <td>Controlled airspace coordination</td>
+          <td>Voice/Data link</td>
+          <td>Situational</td>
+      </tr>
+      <tr>
+          <td><strong>Emergency Services (911/112)</strong></td>
+          <td>Incident reporting</td>
+          <td>Outbound alerts</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td><strong>NOTAM Filing</strong></td>
+          <td>Publish flight operations</td>
+          <td>Outbound → AIM</td>
+          <td>Situational</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="integration-architecture">Integration Architecture</h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────────────────────────┐
+│                         FLEET PLATFORM                               │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐             │
+│   │   Gateway   │    │  JetStream  │    │   Fleet     │             │
+│   │  (Vehicle)  │    │  (Logging)  │    │  Manager    │             │
+│   └──────┬──────┘    └──────┬──────┘    └──────┬──────┘             │
+│          │                  │                  │                     │
+└──────────┼──────────────────┼──────────────────┼─────────────────────┘
+           │                  │                  │
+           ▼                  ▼                  ▼
+┌──────────────────────────────────────────────────────────────────────┐
+│                      INTEGRATION LAYER                               │
+├──────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐             │
+│  │   UTM    │  │  Remote  │  │ Weather  │  │ License  │             │
+│  │   USS    │  │    ID    │  │   API    │  │   DB     │             │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘             │
+│       │             │             │             │                    │
+└───────┼─────────────┼─────────────┼─────────────┼────────────────────┘
+        │             │             │             │
+        ▼             ▼             ▼             ▼
+   ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐
+   │Airspace │   │   FAA   │   │  NOAA   │   │  CAA    │
+   │  Link   │   │ DroneZone│  │ Aviation│   │ Registry│
+   │ Aloft   │   │ NASA DIP│   │ Weather │   │         │
+   └─────────┘   └─────────┘   └─────────┘   └─────────┘
+</code></pre><hr>
+<h3 id="integration-roadmap">Integration Roadmap</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Integration</th>
+          <th>Status</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>OpenDroneID broadcast</td>
+          <td>✅ Supported</td>
+          <td>Hardware module required</td>
+      </tr>
+      <tr>
+          <td>ADS-B In receiver</td>
+          <td>🔧 Roadmap</td>
+          <td>uAvionix pingRX or similar</td>
+      </tr>
+      <tr>
+          <td>UTM/USS (Airspace Link)</td>
+          <td>🔧 Roadmap</td>
+          <td>AirHub API, tiered pricing</td>
+      </tr>
+      <tr>
+          <td>UTM/USS (Aloft)</td>
+          <td>🔧 Roadmap</td>
+          <td>REST API integration</td>
+      </tr>
+      <tr>
+          <td>LAANC</td>
+          <td>🔧 Roadmap</td>
+          <td>Via USS partner</td>
+      </tr>
+      <tr>
+          <td>Aviation weather</td>
+          <td>🔧 Roadmap</td>
+          <td>aviationweather.gov (open, 100 req/min)</td>
+      </tr>
+      <tr>
+          <td>NOTAM feed</td>
+          <td>🔧 Roadmap</td>
+          <td>NASA DIP or FAA SWIM</td>
+      </tr>
+      <tr>
+          <td>Pilot license verification</td>
+          <td>🔧 Roadmap</td>
+          <td>Per-jurisdiction APIs</td>
+      </tr>
+      <tr>
+          <td>Insurance verification</td>
+          <td>🔧 Roadmap</td>
+          <td>Provider APIs</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="compliance-matrix">Compliance Matrix</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Requirement</th>
+          <th>Platform Component</th>
+          <th>Status</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Remote ID broadcast</td>
+          <td>OpenDroneID module + Gateway</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>Remote ID logging</td>
+          <td>JetStream streams</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>Detect-and-Avoid</td>
+          <td>Jetson sensor fusion</td>
+          <td>🔧 Roadmap</td>
+      </tr>
+      <tr>
+          <td>ADS-B In</td>
+          <td>Traffic receiver integration</td>
+          <td>🔧 Roadmap</td>
+      </tr>
+      <tr>
+          <td>Geofencing (static)</td>
+          <td>PX4 <code>GF_*</code> parameters</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>Geofencing (dynamic)</td>
+          <td>Gateway policy updates</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>C2 link primary</td>
+          <td>LTE/5G via NATS</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>C2 link backup</td>
+          <td>Satellite integration</td>
+          <td>🔧 Roadmap</td>
+      </tr>
+      <tr>
+          <td>Failsafe on link loss</td>
+          <td>PX4 failsafe config</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>Flight logging</td>
+          <td>JetStream telemetry streams</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>Audit export</td>
+          <td>Log export tooling</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>Pilot authentication</td>
+          <td>Authorization system</td>
+          <td>✅ Supported</td>
+      </tr>
+      <tr>
+          <td>License tracking</td>
+          <td>Fleet management</td>
+          <td>🔧 Roadmap</td>
+      </tr>
+      <tr>
+          <td>Insurance tracking</td>
+          <td>Fleet management</td>
+          <td>🔧 Roadmap</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="references">References</h2>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[1]</strong> EASA. &ldquo;Drones (UAS) - Frequently Asked Questions.&rdquo; European Union Aviation Safety Agency. <a href="https://www.easa.europa.eu/en/the-agency/faqs/drones-uas">https://www.easa.europa.eu/en/the-agency/faqs/drones-uas</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[2]</strong> Drone Pilot Ground School. &ldquo;Part 108: What We Know So Far about the FAA&rsquo;s BVLOS Rule.&rdquo; <a href="https://www.dronepilotgroundschool.com/part-108/">https://www.dronepilotgroundschool.com/part-108/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[3]</strong> DroneLife. &ldquo;FAA Progress on BVLOS Rules and Advanced Air Mobility Integration.&rdquo; Aug 2024. <a href="https://dronelife.com/2024/08/01/faa-progress-on-bvlos-rules-and-advanced-air-mobility-integration/">https://dronelife.com/2024/08/01/faa-progress-on-bvlos-rules-and-advanced-air-mobility-integration/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[4]</strong> FAA. &ldquo;BEYOND Program.&rdquo; Federal Aviation Administration. <a href="https://www.faa.gov/uas/programs_partnerships/beyond">https://www.faa.gov/uas/programs_partnerships/beyond</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[5]</strong> DroneUp. &ldquo;DroneUp Awarded Landmark FAA Approval for Beyond Visual Line of Sight (BVLOS) in the U.S.&rdquo; Jan 2024. <a href="https://www.droneup.com/news/droneup-awarded-bvlos">https://www.droneup.com/news/droneup-awarded-bvlos</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[6]</strong> DroneDJ. &ldquo;Amazon gets FAA BVLOS approval for Prime Air drone delivery.&rdquo; May 2024. <a href="https://dronedj.com/2024/05/30/amazon-gets-faa-bvlos-approval-for-prime-air-drone-delivery/">https://dronedj.com/2024/05/30/amazon-gets-faa-bvlos-approval-for-prime-air-drone-delivery/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[7]</strong> DroneDJ. &ldquo;Asylon bags new FAA approval for BVLOS drone operations.&rdquo; Apr 2024. <a href="https://dronedj.com/2024/04/26/asylon-drone-faa-bvlos-dronesentry/">https://dronedj.com/2024/04/26/asylon-drone-faa-bvlos-dronesentry/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[8]</strong> DroneLife. &ldquo;FAA Grants Historic BVLOS Approval for Multiple Operators in DFW Area.&rdquo; Jul 2024. <a href="https://dronelife.com/2024/07/31/faa-grants-historic-bvlos-approval-for-multiple-operators-in-dfw-area/">https://dronelife.com/2024/07/31/faa-grants-historic-bvlos-approval-for-multiple-operators-in-dfw-area/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[9]</strong> MLT Aikins. &ldquo;International drone regulations: Key updates on BVLOS, UTM and use cases.&rdquo; <a href="https://www.mltaikins.com/insights/international-drone-regulations-key-updates-on-bvlos-utm-and-use-cases/">https://www.mltaikins.com/insights/international-drone-regulations-key-updates-on-bvlos-utm-and-use-cases/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[10]</strong> FlytBase. &ldquo;Understanding EU Drone Regulations for Docked BVLOS Operations.&rdquo; <a href="https://www.flytbase.com/blog/eu-drone-regulations-for-bvlos-operations">https://www.flytbase.com/blog/eu-drone-regulations-for-bvlos-operations</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[11]</strong> Elsight. &ldquo;EASA Remote ID Requirements: Compliance for Drone Operators.&rdquo; <a href="https://www.elsight.com/blog/primer-on-easa-remote-id-regulations/">https://www.elsight.com/blog/primer-on-easa-remote-id-regulations/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[12]</strong> Sparkco. &ldquo;Autonomous Drone Delivery Regulatory Approval.&rdquo; <a href="https://sparkco.ai/blog/autonomous-drone-delivery-regulatory-approval">https://sparkco.ai/blog/autonomous-drone-delivery-regulatory-approval</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[13]</strong> sees.ai. &ldquo;Why Us - First UK routine BVLOS permission.&rdquo; <a href="https://www.sees.ai/why-us/">https://www.sees.ai/why-us/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[14]</strong> CASA. &ldquo;BVLOS drone operations in regional Australia - Consultation.&rdquo; Civil Aviation Safety Authority. <a href="https://consultation.casa.gov.au/stakeholder-engagement-group/consultation.2023-10-05.5578154857/">https://consultation.casa.gov.au/stakeholder-engagement-group/consultation.2023-10-05.5578154857/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[15]</strong> Measure Australia. &ldquo;New CASA Drone Regulations Incoming!&rdquo; <a href="https://www.measureaustralia.com.au/news/new-casa-drone-regulations-incoming">https://www.measureaustralia.com.au/news/new-casa-drone-regulations-incoming</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[16]</strong> Droneii. &ldquo;Commercial Drone Regulation Report 2025.&rdquo; Drone Industry Insights. <a href="https://droneii.com/product/commercial-drone-regulation-report">https://droneii.com/product/commercial-drone-regulation-report</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[17]</strong> DroneLife. &ldquo;Sphere Drones Secures BVLOS Area Approval to Advance Commercial Drone Use in Australia.&rdquo; May 2024. <a href="https://dronelife.com/2024/05/08/sphere-drones-secures-bvlos-area-approval-to-advance-commercial-drone-use-in-australia/">https://dronelife.com/2024/05/08/sphere-drones-secures-bvlos-area-approval-to-advance-commercial-drone-use-in-australia/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[18]</strong> Unmanned Airspace. &ldquo;Japan&rsquo;s revised drone laws to permit BVLOS flights over people come into effect.&rdquo; <a href="https://www.unmannedairspace.info/emerging-regulations/japanese-revised-drone-laws-to-permit-bvlos-flights-over-people-come-into-effect/">https://www.unmannedairspace.info/emerging-regulations/japanese-revised-drone-laws-to-permit-bvlos-flights-over-people-come-into-effect/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[19]</strong> Fly Eye. &ldquo;Japan Drone Laws (2025).&rdquo; <a href="https://www.flyeye.io/japan-drone-laws/">https://www.flyeye.io/japan-drone-laws/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[20]</strong> Drone Laws. &ldquo;Singapore Drone Laws 2025.&rdquo; <a href="https://drone-laws.com/drone-laws-in-singapore/">https://drone-laws.com/drone-laws-in-singapore/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[21]</strong> Heron AirBridge. &ldquo;B-RID in Singapore: Full Guide to the New Drone Regulations.&rdquo; <a href="https://heron-airbridge.com/singapore-brid-regulation/">https://heron-airbridge.com/singapore-brid-regulation/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[22]</strong> Fly Eye. &ldquo;Advanced Drone Operations in China.&rdquo; <a href="https://www.flyeye.io/chinese-drone-regulations-advanced-operations/">https://www.flyeye.io/chinese-drone-regulations-advanced-operations/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[23]</strong> Fly Eye. &ldquo;Chinese Drone Laws (2025).&rdquo; <a href="https://www.flyeye.io/chinese-drone-laws/">https://www.flyeye.io/chinese-drone-laws/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[24]</strong> Commercial UAV News. &ldquo;India Makes a Giant Leap Toward BVLOS Operations.&rdquo; <a href="https://www.commercialuavnews.com/drone-delivery/india-makes-a-giant-leap-toward-bvlos-operations">https://www.commercialuavnews.com/drone-delivery/india-makes-a-giant-leap-toward-bvlos-operations</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[25]</strong> Fly and Tech. &ldquo;Drone Rules in India 2025 – Latest DGCA Guidelines Update.&rdquo; <a href="https://flyandtech.com/drone-rules-india-2025/">https://flyandtech.com/drone-rules-india-2025/</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[26]</strong> Sigma Chambers. &ldquo;Drone Law Brief | Vol 1: September &amp; October 2025.&rdquo; <a href="https://www.sigmachambers.in/post/drone-law-watch-vol-1-september-october-2025">https://www.sigmachambers.in/post/drone-law-watch-vol-1-september-october-2025</a></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>[27]</strong> ITLN. &ldquo;How will BVLOS drone delivery ops impact the Indian logistics industry?&rdquo; <a href="https://www.itln.in/cargo-drones/how-will-bvlos-drone-delivery-ops-impact-the-indian-logistics-industry-1353269">https://www.itln.in/cargo-drones/how-will-bvlos-drone-delivery-ops-impact-the-indian-logistics-industry-1353269</a></p>
+
+</article>
+
+  </main>
+  <footer class="container">
+    <small>Plat BVLOS Documentation</small>
+  </footer>
+</body>
+</html>
